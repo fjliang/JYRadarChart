@@ -188,7 +188,7 @@
 	//draw steps line
 	//static CGFloat dashedPattern[] = {3,3};
 	//TODO: make this color a variable
-	[[UIColor lightGrayColor] setStroke];
+	[_radarLineColor setStroke];
 	CGContextSaveGState(context);
 	for (int step = 1; step <= _steps; step++) {
 		for (int i = 0; i <= _numOfV; ++i) {
@@ -206,7 +206,7 @@
 	CGContextRestoreGState(context);
     
 	//draw lines from center
-	[_backgroundLineColorRadial setStroke];
+	[_radarLineColor setStroke];
 	for (int i = 0; i < _numOfV; i++) {
 		CGContextMoveToPoint(context, _centerPoint.x, _centerPoint.y);
 		CGContextAddLineToPoint(context, _centerPoint.x - _r * sin(i * radPerV),
